@@ -1,7 +1,6 @@
 import CreateProductUseCase from "./create.product.usecase";
 
 const input = {
-    type: "a",
     name: "product 1",
     price: 10
 }
@@ -34,7 +33,6 @@ describe("Unit test create product unit test", () => {
         const productCreateUseCase = new CreateProductUseCase(productRepository);
 
         const new_input = {
-            type: input.type,
             name: "",
             price: input.price
         }
@@ -43,12 +41,11 @@ describe("Unit test create product unit test", () => {
           );
     });
 
-    it("it should throw an error when pricr is negative", async () => {
+    it("it should throw an error when price is negative", async () => {
         const productRepository = MockRepository();
         const productCreateUseCase = new CreateProductUseCase(productRepository);
 
         const new_input = {
-            type: input.type,
             name: input.name,
             price: -1
         }
